@@ -1,0 +1,389 @@
+/* ---------------
+Form
+--------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* ---------------
+Global Field
+--------------- */
+.g__form_field label {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  margin-bottom: 0.5rem;
+}
+.g__form_field input,
+.g__form_field textarea {
+  width: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+  background: var(--neutral-10);
+  border: 0;
+  border-bottom: 1px solid var(--neutral-300);
+  padding: 0.5rem;
+  border-radius: 5px 5px 0 0;
+}
+/* ---------------
+Checkbox
+--------------- */
+.g__check-container label.g__filter-label {
+  position: relative;
+  padding-left: 25px;
+}
+.g__check-container label.g__filter-label input {
+  width: initial;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  accent-color: var(--primary);
+}
+/* ---------------
+Color
+--------------- */
+.g__color-container {
+  display: flex;
+}
+.g__color-container .g__field-color {
+  max-width: 50px;
+  padding: 0;
+  height: 40px;
+  border-radius: 5px 0 0 0;
+}
+.g__color-container .g__hex-value {
+  padding: 0;
+  height: 40px;
+  border-radius: 0 5px 0 0;
+  padding-left: 10px;
+}
+/* ---------------
+Currency
+--------------- */
+.g__currency-container {
+  position: relative;
+}
+.g__currency-container .g__currency-unit {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  color: var(--neutral-400);
+}
+/* ---------------
+Date
+--------------- */
+::-webkit-datetime-edit-text {
+  color: var(--neutral-700);
+  padding: 0 0.3rem;
+}
+::-webkit-datetime-edit-month-field {
+  color: var(--neutral-700);
+}
+::-webkit-datetime-edit-day-field {
+  color: var(--neutral-700);
+}
+::-webkit-datetime-edit-year-field {
+  color: var(--neutral-700);
+}
+/* ---------------
+Email
+--------------- */
+
+/* ---------------
+File
+--------------- */
+.g__file-container {
+  display: flex;
+}
+.g__file-container .g__file-btn {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-700);
+  background: var(--neutral-10);
+  border: 1px solid var(--neutral-400);
+  padding: 0.5rem;
+  border-radius: 5px 0 0 5px;
+}
+.g__file-container .g__file-text {
+  flex: 1;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-700);
+  background: var(--neutral-10);
+  border: 1px solid var(--neutral-10);
+  padding: 0.5rem;
+  border-radius: 0 5px 5px 0;
+}
+.g__file-container .g__selected-container {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--neutral-900);
+  background: var(--neutral-10);
+  padding: 0.1rem 0.3rem;
+  border-radius: 5px;
+  transition: color 0.5s ease;
+}
+.g__file-container .g__selected-container:hover {
+  background: var(--neutral-50);
+}
+.g__file-container .g__selected-container .g__file-delete {
+  cursor: pointer;
+  margin-left: 5px;
+}
+/* ---------------
+Multiselect
+--------------- */
+.g__picklist_multiple {
+  display: flex;
+}
+.chosen-container {
+  flex: 1;
+}
+.chosen-container .chosen-drop {
+  border: 0;
+  box-shadow: none;
+  margin-top: 5px;
+}
+.chosen-container-multi .chosen-choices {
+  border: 0;
+  border-bottom: 1px solid #a1a1a1;
+  background-image: none;
+  box-shadow: none;
+}
+.chosen-container .chosen-results {
+  background: #ffffff;
+  border: 0.5px solid #eaeaea;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+.chosen-container .chosen-results li {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  color: #5d5d5d;
+  font-size: 0.9rem;
+}
+.chosen-container .chosen-results li.highlighted {
+  color: #5d50e6;
+  background: #f3f7ff;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  flex: 1;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #757575 !important;
+  border: 0 !important;
+  padding: 0.5rem;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url(https://cdn.addapptation.com/addapptation/granite/chosen-sprite.png) -42px 1px no-repeat;
+  font-size: 1px;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.8rem;
+  background: #eaeaea;
+  border-radius: 50px;
+  border: 0;
+  padding: 5px 20px 5px 10px;
+}
+/* ---------------
+Number
+--------------- */
+
+/* ---------------
+Password
+--------------- */
+.g__password-container {
+  position: relative;
+}
+.g__password-container .g__password-show {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: var(--neutral-400);
+}
+/* ---------------
+Picklist
+--------------- */
+.g__form_field select {
+  width: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-700);
+  background: var(--neutral-10);
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+/* ---------------
+Radio
+--------------- */
+.g__radio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.g__radio-container .g__radio-option {
+  display: flex;
+  align-items: center;
+}
+.g__radio-container .g__radio-option input.g__field-radio {
+  width: initial;
+  margin: 5px;
+  accent-color: var(--primary);
+}
+/* ---------------
+Range
+--------------- */
+.g__range-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+input.g__field-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: var(--neutral-10);
+  outline: none;
+  border-bottom: 0;
+  padding: 0;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.g__field-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.g__field-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.g__range-container .g__range-output {
+  max-width: 90px;
+  margin-left: 10px;
+}
+.g__range-container .g__range-unit {
+  position: absolute;
+  top: 2px;
+  right: 25px;
+  color: var(--neutral-400);
+}
+/* ---------------
+Tags
+--------------- */
+.g__tag-container {
+  color: var(--neutral-600);
+  background: var(--neutral-10);
+  border: 0;
+  border-bottom: 1px solid var(--neutral-300);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 5px;
+  overflow-x: auto;
+}
+.g__tag-container .g__tag {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 5px;
+  padding: 0 10px;
+  border-radius: 30px;
+  background: var(--neutral-100);
+  display: flex;
+  align-items: center;
+  color: var(--neutral-900);
+  cursor: default;
+  transition: all 0.5 ease;
+}
+.g__tag-container .g__tag:hover {
+  background: var(--neutral-50);
+}
+.g__tag i {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #757575;
+  margin-left: 5px;
+}
+.g__tag-container input {
+  color: var(--neutral-600);
+  background: var(--neutral-10);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  padding: 0;
+  font-size: 0.9rem;
+  border: 0;
+  outline: none;
+  flex: 1;
+}
+button#g__submit_btn {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 2px solid transparent;
+  padding: 0.275rem 2.125rem;
+  margin: 0;
+  font-size: 0.9rem;
+  border-radius: 5rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+button#g__submit_btn:hover {
+  color: #fff;
+  background-color: var(--primary-400);
+  border-color: var(--primary-400);
+}

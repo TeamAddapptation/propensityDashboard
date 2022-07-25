@@ -1,0 +1,38 @@
+.g__multiselect {
+  position: relative;
+}
+.g__default-select {
+  position: absolute;
+  top: 0;
+  left: -300px;
+  opacity: 0;
+}
+.g__custom-select {
+  display: flex;
+  flex-wrap: wrap;
+}
+.g__custom-option {
+  display: flex;
+  align-items: center;
+  background: var(--primary-10);
+  color: var(--neutral-700);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--neutral-50);
+  box-sizing: border-box;
+  padding: 0.125rem 1.5rem;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: all 0.5s ease;
+}
+.g__custom-option.g__click:hover {
+  cursor: pointer;
+  background: #daf3e9;
+  color: #00b267;
+}
+.g__custom-option.active {
+  cursor: pointer;
+  background: #ffffff;
+  color: #00b267;
+}

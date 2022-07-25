@@ -1,0 +1,294 @@
+.g__table-container {
+  overflow: auto;
+}
+table {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--neutral-600);
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--neutral-50);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.dataTables_scroll {
+  position: relative;
+}
+thead {
+  background: var(--neutral-5);
+  border-bottom: 1px solid var(--neutral-50);
+}
+table td,
+th {
+  text-align: left;
+  padding: 10px;
+}
+thead tr th {
+  color: var(--neutral-600);
+  font-weight: 600;
+}
+table tbody tr {
+  border-bottom: 1px solid var(--neutral-50);
+  transition: all 0.2s ease-in;
+}
+table tbody tr.g__clickable-row {
+  cursor: pointer;
+}
+table tbody tr.g__clickable-row:hover {
+  background: var(--primary-10);
+}
+table tbody tr td a {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--neutral-900);
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+table tbody tr td {
+  position: relative;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+table tbody tr td a:hover {
+  color: var(--neutral-600);
+}
+.g__table-thumb {
+  max-width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+/* ----------
+  Select
+  ---------- */
+table select.g__table-select {
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+/* ----------
+  Row Dropdown
+  ---------- */
+.g__full-row {
+  visibility: collapse;
+  line-height: 0;
+  padding: 0;
+  border: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.g__full-row.g__open {
+  visibility: visible;
+  line-height: inherit;
+  opacity: 1;
+}
+.g__toggle-row-details {
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.g__toggle-row-details.active {
+  transform: rotate(-90deg);
+}
+.g__connection-container {
+  display: flex;
+  align-items: center;
+}
+.g__connection-container i {
+  margin-right: 10px;
+}
+.g__connection-logo {
+  max-height: 30px;
+  width: auto;
+  margin-right: 15px;
+}
+/* ----------
+  datatables.js
+  ---------- */
+
+::-webkit-scrollbar {
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5d5d5d;
+}
+table.dataTable thead th {
+  font-size: 0.8rem;
+  color: #5d5d5d;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dataTables_length {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--neutral-600);
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+.dataTables_length select {
+  color: var(--neutral-600);
+  font-size: 0.8rem;
+}
+.dataTables_filter {
+  position: relative;
+}
+.dataTables_filter label:after {
+  display: block;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+  content: "\f002";
+  color: var(--neutral-500);
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+}
+#g__search-bar label {
+  margin: 0;
+}
+#g__search-bar .dataTables_filter input {
+  height: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  background: var(--primary-10);
+  border: 0;
+  border-top: 1px solid var(--neutral-50);
+  border-bottom: 1px solid var(--neutral-100);
+  border-left: 1px solid var(--neutral-50);
+  border-right: 1px solid var(--neutral-50);
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  border-radius: 5px 5px 0 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.dataTables_info {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--body-font);
+  font-weight: 400;
+}
+.dataTables_paginate {
+  float: right;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-size: 0.8rem;
+  list-style: none;
+  font-weight: 400;
+}
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background: #ffffff;
+  border: 0.5px solid #eaeaea;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+}
+.page-item.active .page-link {
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  font-weight: 600;
+  color: var(--primary);
+}
+.page-link {
+  text-decoration: none;
+  padding: 0.4rem;
+  border: 0;
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  margin: 0;
+}
+.page-link:hover {
+  color: var(--neutral-800);
+  background-color: transparent;
+}
+table.dataTable.no-footer {
+  border: 1px solid var(--neutral-50);
+}
+table.dataTable thead th,
+table.dataTable thead td {
+  border-bottom: 1px solid var(--neutral-50);
+}
+table.dataTable tbody td {
+  border-bottom: 1px solid var(--neutral-50);
+}
+/* ----------
+  Sorting Arrows
+  ---------- */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after {
+  color: var(--neutral-500);
+}
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:after {
+  color: var(--primary);
+}
+/* ----------
+  Export Button
+  ---------- */
+.dt-buttons {
+  display: inline-block;
+  margin-top: 10px;
+}
+div.dataTables_wrapper div.dataTables_filter {
+  float: right;
+}
+.dataTables_filter input {
+  position: relative;
+  border: 0;
+  height: 40px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 10px;
+  padding-left: 25px;
+}
+.buttons-html5 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--neutral-700);
+}
+.buttons-html5:hover {
+  background: transparent;
+  color: var(--neutral-400);
+}
+.btn-secondary:hover {
+  background: transparent;
+}
+.buttons-html5:not(:last-child) {
+  border-right: 1px solid #eaeaea;
+}
