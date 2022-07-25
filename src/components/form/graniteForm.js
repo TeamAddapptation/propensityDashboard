@@ -1,10 +1,11 @@
-function graniteForm(formsBlock) {
+export default function graniteForm(formsBlock) {
   console.log("Form JSON: ", formsBlock);
   const id = formsBlock.id;
   const granite_id = formsBlock.id;
   const o = formsBlock.options;
   const r = formsBlock.records;
   const rLength = r.length;
+  const cssId = "#" + id;
   const action = o.addapptation_action || "/";
   const formId = o.formId || "g__" + Math.random().toString(36).substring(2, 15);
   const method = o.method || "POST";
@@ -15,6 +16,19 @@ function graniteForm(formsBlock) {
   if (granite_div === null) {
     console.error("Object ID and Granite Div ID Do Not Match");
   }
+  /* -------------------- CSS ----------------------*/
+  var formCss = document.createElement("style");
+  formCss.id = "g__css_" + id;
+  formCss.innerHTML = `
+    ${cssId}{
+      width: ${o.width || "100%"};
+      max-width:${o.max_width || "100%"};
+    }`;
+  let granite_css = document.getElementById("g__css_" + id);
+  if (granite_css) {
+    granite_css.remove();
+  }
+  document.head.appendChild(formCss);
   /* -------------------- Form Container ----------------------*/
   let formContainer = document.createElement("form");
   // conditional attributes

@@ -1,4 +1,4 @@
-function graniteTable(jsonBlock) {
+export default function graniteTable(jsonBlock) {
   /*---------------------------------------------
     Global Variables
     ---------------------------------------------*/
@@ -6,6 +6,7 @@ function graniteTable(jsonBlock) {
   const o = jsonBlock.options;
   const r = jsonBlock.records;
   const cssId = "#" + id;
+  let columnCount = 0;
   const graniteDiv = document.getElementById(id);
 
   /*---------------------------------------------
@@ -144,21 +145,11 @@ function graniteTable(jsonBlock) {
         const tHead = table.createTHead();
         const tHeadRow = tHead.insertRow();
         row.children.forEach((cell, index) => {
+          columnCount++;
           const newThCell = document.createElement("th");
-          cell.width ? (newThCell.style.width = cell.width) : "";
           newThCell.innerHTML = cell.value;
           if (cell.color_label) {
             newThCell.style.borderBottom = `4px solid ${cell.color_label}`;
-          }
-          if (cell.tooltip) {
-            newThCell.classList.add("g__tooltip-cell");
-            const tooltipTh = document.createElement("div");
-            tooltipTh.classList.add("g__tooltip-container");
-            tooltipTh.innerHTML = cell.tooltip;
-            newThCell.appendChild(tooltipTh);
-          }
-          if (cell.title_tag) {
-            newThCell.setAttribute("title", cell.title_tag);
           }
           if (cell.text_align) {
             switch (cell.text_align) {
@@ -190,6 +181,18 @@ function graniteTable(jsonBlock) {
           let newCell = document.createElement("td");
           cell.width ? (newCell.style.width = cell.width) : "auto";
           newCell.innerHTML = cell.value;
+
+          if (row.dropdown && index === 0) {
+            newCell.innerHTML = "";
+            const connectionContainer = document.createElement("div");
+            connectionContainer.classList.add("g__connection-container");
+            connectionContainer.setAttribute("data-row-num", index);
+            const openIcon = document.createElement("i");
+            openIcon.classList.add("g__toggle-row-details", "far", "fa-solid", "fa-angle-down");
+            connectionContainer.appendChild(openIcon);
+            connectionContainer.innerHTML += cell.value;
+            newCell.appendChild(connectionContainer);
+          }
           if (cell.color_label) {
             newCell.style.borderLeft = `4px solid ${cell.color_label}`;
           }
@@ -199,9 +202,6 @@ function graniteTable(jsonBlock) {
             link.href = cell.href;
             link.innerHTML = cell.value;
             newCell.appendChild(link);
-          }
-          if (cell.title_tag) {
-            newCell.setAttribute("title", cell.title_tag);
           }
           if (cell.strength) {
             newCell.innerHTML = "";
@@ -213,7 +213,7 @@ function graniteTable(jsonBlock) {
           }
           if (cell.score) {
             newCell.innerHTML = "";
-            newCell.appendChild(score(cell));
+            score(newCell, cell);
           }
           if (cell.status) {
             newCell.innerHTML = "";
@@ -241,6 +241,21 @@ function graniteTable(jsonBlock) {
 
           newRow.appendChild(newCell);
         });
+        break;
+      case "dropdown":
+        const fullRow = tbody.insertRow();
+        fullRow.classList.add("g__full-row");
+        fullRow.style.height = 0;
+        fullRow.style.overFlow = "hidden";
+        const fullTd = document.createElement("td");
+        fullTd.setAttribute("colspan", columnCount);
+        fullTd.innerHTML = row.children[0].value;
+        fullRow.appendChild(fullTd);
+        // for (let i = 1; i < columnCount; i++) {
+        //   const blankTd = document.createElement("td");
+        //   fullRow.appendChild(blankTd);
+        // }
+
         break;
     }
   });
@@ -273,6 +288,16 @@ function graniteTable(jsonBlock) {
       columnDefs: columnWidths,
     });
   }
+  /*---------------------------------------------
+    Toggle Row
+    ---------------------------------------------*/
+  const connectionsArr = document.querySelectorAll(".g__connection-container");
+  connectionsArr.forEach((rowParent) => {
+    rowParent.addEventListener("click", (e) => {
+      const parentRow = e.target.closest("tr");
+      parentRow.nextSibling.classList.toggle("g__open");
+    });
+  });
   /*---------------------------------------------
     Clickable Row
     ---------------------------------------------*/
@@ -319,19 +344,21 @@ function graniteTable(jsonBlock) {
   /*---------------------------------------------
     Score
     ---------------------------------------------*/
-  function score(cell) {
-    const scoreContainer = document.createElement("div");
-    if (cell.value >= 67) {
-      scoreContainer.classList.add("g__score-cell", "g__strong", "g__strong-bkg");
-      scoreContainer.innerHTML = `${cell.value}`;
-    } else if (cell.value >= 34 && cell.value < 66) {
-      scoreContainer.classList.add("g__score-cell", "g__moderate", "g__moderate-bkg");
-      scoreContainer.innerHTML = `${cell.value}`;
+  function score(newCell, cell) {
+    if (cell.value >= 70) {
+      newCell.classList.add("g__strong");
+      newCell.classList.add("g__strong-bkg");
+      newCell.innerHTML = `${cell.value}`;
+    } else if (cell.value >= 50 && cell.value < 70) {
+      newCell.classList.add("g__moderate");
+      newCell.classList.add("g__moderate-bkg");
+      newCell.innerHTML = `${cell.value}`;
     } else {
-      scoreContainer.classList.add("g__score-cell", "g__weak", "g__weak-bkg");
-      scoreContainer.innerHTML = `${cell.value}`;
+      newCell.classList.add("g__weak");
+      newCell.classList.add("g__weak-bkg");
+      newCell.innerHTML = `${cell.value}`;
     }
-    return scoreContainer;
+    return newCell;
   }
   /*---------------------------------------------
     Status

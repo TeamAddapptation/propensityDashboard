@@ -7,6 +7,7 @@ const billingHistory = {
   feature: "table",
   options: {
     type: "table",
+    fixed: true,
     datatables: false,
     searching: false,
     paging: false,
@@ -17,13 +18,7 @@ const billingHistory = {
     {
       type: "header",
       background: "#FAFAFA",
-      children: [
-        { value: "Billing Date" },
-        { value: "Status" },
-        { value: "Description", text_align: "left" },
-        { value: "Amount", text_align: "center" },
-        { value: "Invoice", text_align: "center" },
-      ],
+      children: [{ value: "Billing Date" }, { value: "Status" }, { value: "Description", text_align: "left" }, { value: "Amount", text_align: "center" }, { value: "Invoice", text_align: "center" }],
     },
     {
       type: "row",
@@ -31,15 +26,13 @@ const billingHistory = {
       children: [
         { value: "May 10, 2022" },
         {
-          value:
-            "<div class='g__status'><span class='g__indicator g__paid'></span>Paid</div>",
+          value: "<div class='g__status'><span class='g__indicator g__paid'></span>Paid</div>",
           text_align: "left",
         },
         { value: "Monthly Subscription", text_align: "left" },
         { value: "$85", text_align: "center" },
         {
-          value:
-            "<a class='g__btn g__btn-muted g__btn-sm' href='#'>Download</a>",
+          value: "<a class='g__btn g__btn-muted g__btn-sm' href='#'>Download</a>",
           text_align: "center",
         },
       ],

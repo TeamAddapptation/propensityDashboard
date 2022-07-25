@@ -7,6 +7,7 @@ const dataConnections = {
   feature: "table",
   options: {
     type: "table",
+    fixed: true,
     datatables: false,
     searching: false,
     paging: false,
@@ -17,13 +18,7 @@ const dataConnections = {
     {
       type: "header",
       background: "#FAFAFA",
-      children: [
-        { value: "Connection Type" },
-        { value: "Username" },
-        { value: "Connected Date", text_align: "center" },
-        { value: "Status", text_align: "center" },
-        { value: "Access", text_align: "center" },
-      ],
+      children: [{ value: "Connection Type" }, { value: "Username" }, { value: "Connected Date", text_align: "center" }, { value: "Status", text_align: "center" }, { value: "Access", text_align: "center" }],
     },
     {
       type: "row",
@@ -31,8 +26,7 @@ const dataConnections = {
       dropdown: true,
       children: [
         {
-          value:
-            "<img class='g__connection-logo' src='https://cdn.addapptation.com/addapptation/granite/Salesforce-logo_db.png'>Salesforce",
+          value: "<img class='g__connection-logo' src='https://cdn.addapptation.com/addapptation/granite/Salesforce-logo_db.png'>Salesforce",
         },
         {
           value: "j.smith@gmail.com",
@@ -41,8 +35,7 @@ const dataConnections = {
         { value: "08/12/21 ", text_align: "center" },
         { value: "Active", text_align: "center" },
         {
-          value:
-            "<a class='g__btn g__btn-neutral g__btn-sm' href='#'>Remove</a>",
+          value: "<a class='g__btn g__btn-neutral g__btn-sm' href='#'>Remove</a>",
           text_align: "center",
         },
       ],
@@ -62,8 +55,7 @@ const dataConnections = {
       dropdown: true,
       children: [
         {
-          value:
-            "<img class='g__connection-logo' src='https://cdn.addapptation.com/addapptation/granite/db_hubspot.svg'>Hubspot",
+          value: "<img class='g__connection-logo' src='https://cdn.addapptation.com/addapptation/granite/db_hubspot.svg'>Hubspot",
         },
         {
           value: "j.smith@gmail.com",
@@ -72,8 +64,7 @@ const dataConnections = {
         { value: "08/12/21 ", text_align: "center" },
         { value: "Active", text_align: "center" },
         {
-          value:
-            "<a class='g__btn g__btn-neutral g__btn-sm' href='#'>Remove</a>",
+          value: "<a class='g__btn g__btn-neutral g__btn-sm' href='#'>Remove</a>",
           text_align: "center",
         },
       ],
