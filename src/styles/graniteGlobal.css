@@ -48,17 +48,6 @@ Colors
   --success-800: #006f22;
   --success-900: #005913;
 
-  --warning-50: #ffeeee;
-  --warning-100: #fff0cf;
-  --warning-200: #fababa;
-  --warning-300: #ed8787;
-  --warning-400: #e05959;
-  --warning: #ff9500;
-  --warning-600: #d67e00;
-  --warning-700: #d67e00;
-  --warning-800: #834e00;
-  --warning-900: #593600;
-
   --danger-50: #ffeeee;
   --danger-100: #fcd4d4;
   --danger-200: #fababa;
@@ -69,6 +58,17 @@ Colors
   --danger-700: #780000;
   --danger-800: #006f22;
   --danger-900: #590000;
+
+  --warning-50: #ffeeee;
+  --warning-100: #fff0cf;
+  --warning-200: #fababa;
+  --warning-300: #ed8787;
+  --warning-400: #e05959;
+  --warning: #d32f2f;
+  --warning-600: #d67e00;
+  --warning-700: #780000;
+  --warning-800: #006f22;
+  --warning-900: #590000;
 
   --neutral-0: #ffffff;
   --neutral-5: #fbfbfd;
